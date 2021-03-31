@@ -1,0 +1,47 @@
+<main>
+    <header>
+        <h1>To Do List</h1>
+        <p>A place to store your to-dos</p>
+    </header>
+    
+    <form>
+        <input name='filter' id='filter' 
+        [(ngModel)]='filterTask'
+        placeholder='Filter your to-dos'/>
+        
+        <div *ngIf='tasks.length===0'>
+            <p id='empty-list-text'>Nothing to do!</p>
+        </div>
+
+        <div class='task-line' *ngFor='let task of tasks; let i = index'>
+            <div class='task-description'>
+                <p class='task-number'>
+                    {{i+1}}.
+                </p>
+
+                <button class='complete'
+                (click)='task.complete = true'
+                *ngIf='!task.complete'>
+                    Complete
+                </button> 
+
+                <p [ngClass]='{isComplete: task.complete}'>
+                    {{task.task}}
+                </p>
+            </div>
+
+            <button class='x' 
+            (click)='removeTask(i)'>
+                X
+            </button>
+        </div>
+        
+        <input name='task' id='task' 
+        [(ngModel)]='newTask'
+        placeholder='Add your to-do'
+        />
+
+        <button class='submit' type='submit'
+        (click)='addTask()'>Add</button>
+    </form>
+</main>

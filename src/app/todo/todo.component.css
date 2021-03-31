@@ -1,0 +1,84 @@
+main{
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 5px;
+}
+
+header{
+    margin-bottom: 5px;
+}
+
+h1{
+    font-size: 1.5em;
+}
+
+p{
+    font-size: 0.9em;
+}
+
+p.task-number{
+    margin-right: 5px;
+}
+
+#empty-list-text{
+    margin: 50px 0;
+}
+
+.task-line{
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-description{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.isComplete{
+    text-decoration: line-through;
+}
+
+input{
+    width: calc(100% - 8px);
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 1.1em;
+    
+}
+
+button{
+    font-size: 1em;
+    border-radius: 3px;
+}
+
+button.submit{
+    width: 100%;
+    color: white;
+    background-color: #ff1493;
+    border: none;
+    margin-top: 5px;
+    padding: 4px ;
+}
+
+button.complete{
+    margin-right: 5px;
+    padding: 2px;
+    color: #ff69b4;
+    border: 1px solid #ff69b4;
+    background-color: white;
+}
+
+button.x{
+    border: none;
+    background-color: white;
+    font-size: 0.8em;
+    padding: 0 3px;
+}
