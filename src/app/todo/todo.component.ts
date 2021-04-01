@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ToDo } from './todo';
 
 @Component({
@@ -8,8 +8,8 @@ import { ToDo } from './todo';
 })
 
 export class TodoComponent implements OnInit {
-  newTask: string = ''
-  filterTask: string = ''
+  newTask: string = '';
+  filterTask: string = '';
 
   tasks: ToDo[] = [
     {task: 'fold clothes',
@@ -24,7 +24,7 @@ export class TodoComponent implements OnInit {
     complete: false},
     {task: 'be awesome',
     complete: false}
-  ]
+  ];
 
 
   constructor() { }
@@ -33,15 +33,15 @@ export class TodoComponent implements OnInit {
   }
 
   addTask(){
-    this.tasks.push({
+    this.tasks?.push({
       task: this.newTask,
       complete: false,
     });
     this.newTask = '';
   }
 
-  removeTask(i:number){
-    this.tasks.splice(i,1);
-  }
+  // removeTask(i:number){
+  //   this.tasks?.splice(i,1);
+  // }
 
 }

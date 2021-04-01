@@ -1,0 +1,28 @@
+
+<div class='task-description'>
+
+    <p class='task-number'>
+        {{i+1}}.
+    </p>
+
+    <!-- The only way I was able to not get errors in the ngIf, click, or ngClass was to use a ternary operator to handle any case where task was null, no idea if this is the best way to do this -->
+
+    <button class='complete'
+    *ngIf='task?.complete === false ? true : "" '
+    (click)='task !== null ? task.complete = true : "" '
+    >
+        Complete
+    </button> 
+
+    <p [ngClass]='task?.complete === true ? "isComplete" : "" '>
+        {{task?.task}}
+    </p>
+
+</div>
+
+
+<!-- (click)='removeTask(i)' worked when this wasn't a child component, think i need a way to send info back up to parent where the task array is? -->
+<button class='x'>
+    X
+</button>
+
