@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToDo } from './todo';
 
 @Component({
@@ -9,7 +9,7 @@ import { ToDo } from './todo';
 
 export class TodoComponent implements OnInit {
   newTask: string = '';
-  filterTask: string = '';
+  filterText: string = '';
 
   tasks: ToDo[] = [
     {task: 'fold clothes',
@@ -40,8 +40,10 @@ export class TodoComponent implements OnInit {
     this.newTask = '';
   }
 
-  // removeTask(i:number){
-  //   this.tasks?.splice(i,1);
-  // }
+  removeTask(event:any){
+    this.tasks?.splice(this.tasks?.indexOf(event),1);
+    this.filterText='';
+  }
+
 
 }

@@ -5,12 +5,15 @@
     </header>
     
     <form>
-        <input name='filter' id='filter' 
-        [(ngModel)]='filterTask'
+        <input name='filterInput' id='filterInput' 
+        [(ngModel)]='filterText'
         placeholder='Filter your to-dos'/>
 
         <!-- List all to-do tasks -->
-        <app-task class='task-line' *ngFor='let task of tasks; let i = index' [task]='task' [i]='i'></app-task>
+        <app-task class='task-line' 
+        *ngFor='let task of tasks | filter: filterText; let i = index' 
+        [task]='task' [i]='i' 
+        (removed)='removeTask($event)'></app-task>
 
         <!-- If no tasks in list, show this -->
         <div *ngIf='tasks.length===0'>

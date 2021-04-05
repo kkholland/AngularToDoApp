@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
 import { TaskComponent } from './task/task.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
-    TaskComponent
+    TaskComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule, FormsModule
